@@ -25,25 +25,19 @@ The HDR10 test file used in the examples can be downloaded with [yt-dlp](https:/
 
 **Install yt-dlp:**
 
-macOS:
 ```sh
-brew install yt-dlp
+make install-yt-dlp
 ```
 
-Windows:
-```sh
-winget install yt-dlp
-```
+This runs `brew install yt-dlp` on macOS or `winget install yt-dlp` on Windows.
 
 **Download the LG Jazz HDR test clip into `data/`:**
 
 ```sh
-yt-dlp -f "bestvideo+bestaudio" --merge-output-format mp4 \
-  -o "data/%(title)s [%(id)s].%(ext)s" \
-  "https://www.youtube.com/watch?v=mkggXE5e2yk"
+make download-testdata
 ```
 
-This selects the highest quality video and audio streams and merges them into an MP4. The file will land in `data/` and be ignored by git.
+This selects the highest quality video and audio streams and merges them into an MP4 in `data/`, which is gitignored.
 
 ---
 
@@ -318,25 +312,19 @@ CMake 3.20+、支持 C++20 的编译器（Apple Clang 15+ 或 GCC 13+）、Go 1.
 
 **安装 yt-dlp：**
 
-macOS：
 ```sh
-brew install yt-dlp
+make install-yt-dlp
 ```
 
-Windows：
-```sh
-winget install yt-dlp
-```
+macOS 上执行 `brew install yt-dlp`，Windows 上执行 `winget install yt-dlp`。
 
 **将 LG Jazz HDR 测试片段下载到 `data/` 目录：**
 
 ```sh
-yt-dlp -f "bestvideo+bestaudio" --merge-output-format mp4 \
-  -o "data/%(title)s [%(id)s].%(ext)s" \
-  "https://www.youtube.com/watch?v=mkggXE5e2yk"
+make download-testdata
 ```
 
-此命令会选择最高质量的视频和音频流并合并为 MP4。文件将保存至 `data/` 目录，并已被 git 忽略。
+此命令会选择最高质量的视频和音频流并合并为 MP4，保存至 `data/` 目录（已被 git 忽略）。
 
 ---
 
