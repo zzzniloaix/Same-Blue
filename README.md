@@ -19,6 +19,34 @@ CMake 3.20+, a C++20 compiler (Apple Clang 15+ or GCC 13+), and Go 1.22+.
 
 ---
 
+## Test Data
+
+The HDR10 test file used in the examples can be downloaded with [yt-dlp](https://github.com/yt-dlp/yt-dlp).
+
+**Install yt-dlp:**
+
+macOS:
+```sh
+brew install yt-dlp
+```
+
+Windows:
+```sh
+winget install yt-dlp
+```
+
+**Download the LG Jazz HDR test clip into `data/`:**
+
+```sh
+yt-dlp -f "bestvideo+bestaudio" --merge-output-format mp4 \
+  -o "data/%(title)s [%(id)s].%(ext)s" \
+  "https://www.youtube.com/watch?v=mkggXE5e2yk"
+```
+
+This selects the highest quality video and audio streams and merges them into an MP4. The file will land in `data/` and be ignored by git.
+
+---
+
 ## Build
 
 ```sh
@@ -281,6 +309,34 @@ brew install ffmpeg
 ```
 
 CMake 3.20+、支持 C++20 的编译器（Apple Clang 15+ 或 GCC 13+）、Go 1.22+。
+
+---
+
+## 测试数据
+
+示例中使用的 HDR10 测试文件可通过 [yt-dlp](https://github.com/yt-dlp/yt-dlp) 下载。
+
+**安装 yt-dlp：**
+
+macOS：
+```sh
+brew install yt-dlp
+```
+
+Windows：
+```sh
+winget install yt-dlp
+```
+
+**将 LG Jazz HDR 测试片段下载到 `data/` 目录：**
+
+```sh
+yt-dlp -f "bestvideo+bestaudio" --merge-output-format mp4 \
+  -o "data/%(title)s [%(id)s].%(ext)s" \
+  "https://www.youtube.com/watch?v=mkggXE5e2yk"
+```
+
+此命令会选择最高质量的视频和音频流并合并为 MP4。文件将保存至 `data/` 目录，并已被 git 忽略。
 
 ---
 
