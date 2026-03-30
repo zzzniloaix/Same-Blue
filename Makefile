@@ -1,4 +1,4 @@
-.PHONY: build test download-testdata clean
+.PHONY: build test download-testdata install-yt-dlp clean
 
 build:
 	cmake -B build -S .
@@ -8,6 +8,13 @@ build:
 test:
 	./build/Same_Blue_tests
 	go test ./...
+
+install-yt-dlp:
+ifeq ($(OS),Windows_NT)
+	winget install yt-dlp
+else
+	brew install yt-dlp
+endif
 
 download-testdata:
 	yt-dlp -f "bestvideo+bestaudio" --merge-output-format mp4 \
