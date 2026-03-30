@@ -1,0 +1,9 @@
+.git/
+.idea/
+cmake-build-debug/
+cmake-build-release/
+build/
+bin/
+*.mp4
+*.mkv
+*.mov

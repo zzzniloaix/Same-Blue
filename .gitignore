@@ -1,0 +1,22 @@
+# Build output
+build/
+
+# Go binary
+same-blue
+Same-Blue
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Video test data (large files — keep local, don't commit)
+data/*.mp4
+data/*.mkv
+data/*.mov
+
+# FFmpeg / encoder intermediate files
+*.yuv
+*.raw
