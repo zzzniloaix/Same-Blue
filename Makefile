@@ -16,10 +16,12 @@ else
 	brew install yt-dlp
 endif
 
+URL ?= https://www.youtube.com/watch?v=mkggXE5e2yk
+
 download-testdata:
 	yt-dlp -f "bestvideo+bestaudio" --merge-output-format mp4 \
 		-o "data/%(title)s [%(id)s].%(ext)s" \
-		"https://www.youtube.com/watch?v=mkggXE5e2yk"
+		"$(URL)"
 
 clean:
 	rm -rf build same-blue

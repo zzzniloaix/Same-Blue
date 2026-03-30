@@ -37,6 +37,12 @@ This runs `brew install yt-dlp` on macOS or `winget install yt-dlp` on Windows.
 make download-testdata
 ```
 
+To download a different video, pass the URL:
+
+```sh
+make download-testdata URL="https://www.youtube.com/watch?v=<id>"
+```
+
 This selects the highest quality video and audio streams and merges them into an MP4 in `data/`, which is gitignored.
 
 ---
@@ -322,6 +328,12 @@ macOS 上执行 `brew install yt-dlp`，Windows 上执行 `winget install yt-dlp
 
 ```sh
 make download-testdata
+```
+
+如需下载其他视频，传入 URL 参数：
+
+```sh
+make download-testdata URL="https://www.youtube.com/watch?v=<id>"
 ```
 
 此命令会选择最高质量的视频和音频流并合并为 MP4，保存至 `data/` 目录（已被 git 忽略）。
